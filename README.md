@@ -6,4 +6,4 @@
 
 ## Backend Developers
 
-- Ignacio Thomson (25 años)
+- Ignacio Thomson
