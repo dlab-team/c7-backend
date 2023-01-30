@@ -6,4 +6,4 @@
 
 ## Backend Developers
 
-- Ignacio Thomson
+- Ignacio Thomson (2 gatos)
