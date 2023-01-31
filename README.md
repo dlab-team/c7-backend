@@ -7,5 +7,5 @@
 ## Backend Developers
 
 - Ignacio Thomson
-- Cristián Araya (1 mascota)
-- Elizabeth Jerez
+- Cristián Araya
+- Elizabeth Jerez ( 3 mascotas)
