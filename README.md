@@ -9,3 +9,4 @@
 - Ignacio Thomson
 - Cristián Araya (1 mascota)
 - Elizabeth Jerez ( 3 mascotas)
+- Giancarlo Noseda (2 mascotas)
