@@ -2,7 +2,7 @@
 
 ## Tech Lead
 
--Gonzalo Fleming
+- Gonzalo Fleming
 
 ## Backend Developers
 
