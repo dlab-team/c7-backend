@@ -9,3 +9,4 @@
 - Ignacio Thomson
 - Cristián Araya
 - Elizabeth Jerez
+- Giancarlo Noseda
