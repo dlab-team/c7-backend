@@ -7,3 +7,5 @@
 ## Backend Developers
 
 - Ignacio Thomson
+- Cristián Araya
+- Elizabeth Jerez
