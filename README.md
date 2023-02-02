@@ -6,8 +6,8 @@
 
 ## Backend Developers
 
-- Ignacio Thomson
-- Cristián Araya
-- Elizabeth Jerez
-- Giancarlo Noseda
-- Angela Medina
+- Angela Medina ( 0 mascotas )
+- Ignacio Thomson (2 gatos)
+- Cristián Araya (1 mascota)
+- Elizabeth Jerez ( 3 mascotas)
+- Giancarlo Noseda (2 mascotas )
