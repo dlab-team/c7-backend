@@ -10,3 +10,4 @@
 - Cristián Araya
 - Elizabeth Jerez
 - Giancarlo Noseda
+- Angela Medina
