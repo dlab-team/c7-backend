@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    command: sh -c "nodemon app/index.js"
+    command: sh -c "npm i && nodemon app/index.js"
     ports:
       - "3005:3005"
     links:

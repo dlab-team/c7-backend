@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/dlab-team/c7-backend.git"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
