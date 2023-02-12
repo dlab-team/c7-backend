@@ -1,0 +1,10 @@
+FROM node:18.14-alpine3.17
+
+RUN npm install -g nodemon
+
+WORKDIR /app
+
+COPY package.json .
+COPY app ./app
+
+RUN npm install
