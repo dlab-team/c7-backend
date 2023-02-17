@@ -1,0 +1,26 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: sh -c "npm i && nodemon app/index.js"
+    ports:
+      - "3005:3005"
+    links:
+      - "postgres"
+    volumes:
+      - .:/app
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:15.1-alpine3.17
+    environment:
+      POSTGRES_PASSWORD: pass
+      POSTGRES_USER: user
+      POSTGRES_DB: db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:
