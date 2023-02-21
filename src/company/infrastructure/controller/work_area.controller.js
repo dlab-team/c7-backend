@@ -1,4 +1,5 @@
 import { work_areas } from "../../application/model/work_area.model.js";
+import { company_work_area } from "../../application/model/company_work_area.model.js";
 
 export const getWorkAreas = async (req, res) => {
   try {
@@ -52,5 +53,16 @@ export const deleteWorkArea = async (req, res) => {
     res.sendStatus(204);
   } catch (error) {
     return res.status(500).json({ message: error.message });
+  }
+};
+
+export const getCompanyWorkAreaInWorkArea = async (req, res) => {
+  try {
+    const companyWorkAreaInWorkArea = company_work_area.findAll({
+      where: { work_area_id: req.params.id },
+    });
+    return res.json(companyWorkAreaInWorkArea);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
   }
 };

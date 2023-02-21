@@ -1,4 +1,6 @@
 import { users } from "../../application/model/user.model.js";
+import { work_profiles } from "../../application/model/work-profile.model.js";
+import { user_test } from "../../application/model/user_test.model.js";
 
 export const getUsers = async (req, res) => {
   try {
@@ -23,10 +25,8 @@ export const getUser = async (req, res) => {
 export const createUser = async (req, res) => {
   try {
     const newUser = await users.create({
-      name: req.body.name.charAt(0).toUpperCase() + req.body.name.slice(1),
-      last_name:
-        req.body.last_name.charAt(0).toUpperCase() +
-        req.body.last_name.slice(1),
+      name: req.body.name,
+      last_name: req.body.last_name,
       email: req.body.email,
       password: req.body.password,
       rol_id: req.body.rol_id,
@@ -41,11 +41,8 @@ export const createUser = async (req, res) => {
 export const updateUser = async (req, res) => {
   try {
     const userByPk = await users.findByPk(req.params.id);
-    userByPk.name =
-      req.body?.name.charAt(0).toUpperCase() + req.body?.name.slice(1);
-    userByPk.last_name =
-      req.body?.last_name.charAt(0).toUpperCase() +
-      req.body?.last_name.slice(1);
+    userByPk.name = req.body?.name;
+    userByPk.last_name = req.body?.last_name;
     userByPk.email = req.body?.email;
     userByPk.password = req.body?.password;
     userByPk.rol_id = req.body?.rol_id;
@@ -67,5 +64,27 @@ export const deleteUser = async (req, res) => {
     res.sendStatus(204);
   } catch (error) {
     return res.status(500).json({ message: error.message });
+  }
+};
+
+export const getWorkProfileInUser = async (req, res) => {
+  try {
+    const workProfileInUser = work_profiles.findAll({
+      where: { userId: req.params.id },
+    });
+    return res.json(workProfileInUser);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
+export const getUserTestsInUser = async (req, res) => {
+  try {
+    const userTestInUser = user_test.findAll({
+      where: { user_id: req.params.id },
+    });
+    return res.json(userTestInUser);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
   }
 };

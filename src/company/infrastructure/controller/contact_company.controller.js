@@ -1,3 +1,4 @@
+import { company_work_area } from "../../application/model/company_work_area.model.js";
 import { contact_company } from "../../application/model/contact_company.model.js";
 
 export const getContactCompanies = async (req, res) => {
@@ -23,17 +24,12 @@ export const getContactCompany = async (req, res) => {
 export const createContactCompany = async (req, res) => {
   try {
     const newContactCompany = await contact_company.create({
-      name: req.body.name.charAt(0).toUppercase() + req.body.name.slice(1),
-      last_name:
-        req.body.last_name.charAt(0).toUppercase() +
-        req.body.last_name.slice(1),
+      name: req.body.name,
+      last_name: req.body.last_name,
       email: req.body.email,
       phone: req.body.phone,
-      company_name:
-        req.body.company_name.charAt(0).toUppercase() +
-        req.body.company_name.slice(1),
-      doubts:
-        req.body.doubts.charAt(0).toUppercase() + req.body.doubts.slice(1),
+      company_name: req.body.company_name,
+      doubts: req.body.doubts,
     });
     res.json(newContactCompany);
   } catch (error) {
@@ -67,5 +63,16 @@ export const deleteContactCompany = async (req, res) => {
     res.sendStatus(204);
   } catch (error) {
     return res.status(500).json({ message: error.message });
+  }
+};
+
+export const getCompanyWorkAreaInContactCompany = async (req, res) => {
+  try {
+    const companyWorkAreaInContactCompany = company_work_area.findAll({
+      where: { company_id: req.params.id },
+    });
+    return res.json(companyWorkAreaInContactCompany);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
   }
 };

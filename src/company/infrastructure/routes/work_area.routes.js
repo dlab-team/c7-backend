@@ -5,6 +5,7 @@ import {
   getWorkArea,
   getWorkAreas,
   updateWorkArea,
+  getCompanyWorkAreaInWorkArea,
 } from "../controller/work_area.controller.js";
 
 const workAreaRoutes = Router();
@@ -14,6 +15,6 @@ workAreaRoutes.post("/workarea", createWorkArea);
 workAreaRoutes.put("/workarea/:id", updateWorkArea);
 workAreaRoutes.delete("/workarea/:id", deleteWorkArea);
 workAreaRoutes.get("/workarea/:id", getWorkArea);
-//workArea.get("/workarea/:id", getCompanyInWorkArea);
+workAreaRoutes.get("/workarea/:id/company", getCompanyWorkAreaInWorkArea);
 
 export default workAreaRoutes;

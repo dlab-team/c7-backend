@@ -39,17 +39,12 @@ export const getEducationExperienceInWorkProfile = async (req, res) => {
 export const createEducationExperience = async (req, res) => {
   try {
     const newEducationExperience = await education_experiences.create({
-      name: req.body.name.charAt(0).toUpperCase() + req.body.name.slice(1),
-      institute_name:
-        req.body.institute_name.charAt(0).toUpperCase() +
-        req.body.institute_name.slice(1),
-      type: req.body.type.charAt(0).toUpperCase() + req.body.type.slice(1),
-      start_month:
-        req.body.start_month.charAt(0).toUpperCase() +
-        req.body.start_month.slice(1),
-      end_month:
-        req.body.end_month.charAt(0).toUpperCase() +
-        req.body.end_month.slice(1),
+      name: req.body.name,
+      work_profile_id: req.body.work_profile_id,
+      institute_name: req.body.institute_name,
+      type: req.body.type,
+      start_month: req.body.start_month,
+      end_month: req.body.end_month,
       start_year: req.body.start_year,
       end_year: req.body.end_year,
     });
@@ -62,18 +57,11 @@ export const createEducationExperience = async (req, res) => {
 export const updateEducationExperience = async (req, res) => {
   try {
     const workProfileByPk = await education_experiences.findByPk(req.params.id);
-    workProfileByPk.name =
-      req.body.name.charAt(0).toUpperCase() + req.body.name.slice(1);
-    workProfileByPk.institute_name =
-      req.body.institute_name.charAt(0).toUpperCase() +
-      req.body.institute_name.slice(1);
-    workProfileByPk.type =
-      req.body.type.charAt(0).toUpperCase() + req.body.type.slice(1);
-    workProfileByPk.start_month =
-      req.body.start_month.charAt(0).toUpperCase() +
-      req.body.start_month.slice(1);
-    workProfileByPk.end_month =
-      req.body.end_month.charAt(0).toUpperCase() + req.body.end_month.slice(1);
+    workProfileByPk.name = req.body.name;
+    workProfileByPk.institute_name = req.body.institute_name;
+    workProfileByPk.type = req.body.type;
+    workProfileByPk.start_month = req.body.start_month;
+    workProfileByPk.end_month = req.body.end_month;
     workProfileByPk.start_year = req.body.start_year;
     workProfileByPk.end_year = req.body.end_year;
     await workProfileByPk.save();

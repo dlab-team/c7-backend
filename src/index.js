@@ -2,6 +2,7 @@ import server from "./server.js";
 import { sequelize } from "./database/sequelize-pg.js";
 
 // Tablas generadas con Sequelize Sync().
+// Descomentar todo para generar las tablas en DB con Sequelize
 // import "../src/user/application/model/role.model.js";
 // import "../src/user/application/model/status.model.js";
 // import "../src/user/application/model/user.model.js";

@@ -1,4 +1,5 @@
 import { work_profiles } from "../../application/model/work-profile.model.js";
+import { education_experiences } from "../../application/model/education_experiences.model.js";
 
 export const getWorkProfiles = async (req, res) => {
   try {
@@ -36,18 +37,12 @@ export const getUserWorkProfile = async (req, res) => {
 export const createWorkProfile = async (req, res) => {
   try {
     const newWorkProfile = await work_profiles.create({
-      gender:
-        req.body.gender.charAt(0).toUpperCase() + req.body.gender.slice(1),
+      gender: req.body.gender,
       phone_number: req.body.phone_number,
-      city: req.body.city.charAt(0).toUpperCase() + req.body.city.slice(1),
-      country:
-        req.body.country.charAt(0).toUpperCase() + req.body.country.slice(1),
-      education_status:
-        req.body.education_status.charAt(0).toUpperCase() +
-        req.body.education_status.slice(1),
-      english_level:
-        req.body.english_level.charAt(0).toUpperCase() +
-        req.body.english_level.slice(1),
+      city: req.body.city,
+      country: req.body.country,
+      education_status: req.body.education_status,
+      english_level: req.body.english_level,
       cv_url: req.body.cv_url,
       linkedin_url: req.body.linkedin_url,
       github_url: req.body.github_url,
@@ -55,29 +50,18 @@ export const createWorkProfile = async (req, res) => {
       work_availability: req.body.work_availability,
       dev_experience: req.body.dev_experience,
       educational_level: req.body.educational_level,
-      comment:
-        req.body.comment.charAt(0).toUpperCase() + req.body.comment.slice(1),
-      ideal_work_comment:
-        req.body.ideal_work_comment.charAt(0).toUpperCase() +
-        req.body.ideal_work_comment.slice(1),
-      relocation_option:
-        req.body.relocation_option.charAt(0).toUpperCase() +
-        req.body.relocation_option.slice(1),
+      comment: req.body.comment,
+      ideal_work_comment: req.body.ideal_work_comment,
+      relocation_option: req.body.relocation_option,
       visa: req.body.visa,
       design: req.body.design,
       portfolio_url: req.body.portfolio_url,
       stack: req.body.stack,
-      additional_tools_comments:
-        req.body.additional_tools_comments.charAt(0).toUpperCase() +
-        req.body.additional_tools_comments.slice(1),
-      employment_status_current:
-        req.body.employment_status_current.charAt(0).toUpperCase() +
-        req.body.employment_status_current.slice(1),
+      additional_tools_comments: req.body.additional_tools_comments,
+      employment_status_current: req.body.employment_status_current,
       userId: req.body.userId,
       current_salary: req.body.current_salary,
-      availability_status:
-        req.body.availability_status.charAt(0).toUpperCase() +
-        req.body.availability_status.slice(1),
+      availability_status: req.body.availability_status,
     });
     res.json(newWorkProfile);
   } catch (error) {
@@ -88,19 +72,12 @@ export const createWorkProfile = async (req, res) => {
 export const updateWorkProfile = async (req, res) => {
   try {
     const workProfileByPk = await work_profiles.findByPk(req.params.id);
-    workProfileByPk.gender =
-      req.body?.gender.charAt(0).toUpperCase() + req.body?.gender.slice(1);
+    workProfileByPk.gender = req.body?.gender;
     workProfileByPk.phone_number = req.body?.phone_number;
-    workProfileByPk.city =
-      req.body?.city.charAt(0).toUpperCase() + req.body?.city.slice(1);
-    workProfileByPk.country =
-      req.body?.country.charAt(0).toUpperCase() + req.body?.country.slice(1);
-    workProfileByPk.education_status =
-      req.body?.education_status.charAt(0).toUpperCase() +
-      req.body?.education_status.slice(1);
-    workProfileByPk.english_level =
-      req.body?.english_level.charAt(0).toUpperCase() +
-      req.body?.english_level.slice(1);
+    workProfileByPk.city = req.body?.city;
+    workProfileByPk.country = req.body?.country;
+    workProfileByPk.education_status = req.body?.education_status;
+    workProfileByPk.english_level = req.body?.english_level;
     workProfileByPk.cv_url = req.body?.cv_url;
     workProfileByPk.linkedin_url = req.body?.linkedin_url;
     workProfileByPk.github_url = req.body?.github_url;
@@ -108,28 +85,19 @@ export const updateWorkProfile = async (req, res) => {
     workProfileByPk.work_availability = req.body?.work_availability;
     workProfileByPk.dev_experience = req.body?.dev_experience;
     workProfileByPk.educational_level = req.body?.educational_level;
-    workProfileByPk.comment =
-      req.body?.comment.charAt(0).toUpperCase() + req.body?.comment.slice(1);
-    workProfileByPk.ideal_work_comment =
-      req.body?.ideal_work_comment.charAt(0).toUpperCase() +
-      req.body?.ideal_work_comment.slice(1);
-    workProfileByPk.relocation_option =
-      req.body?.relocation_option.charAt(0).toUpperCase() +
-      req.body?.relocation_option.slice(1);
+    workProfileByPk.comment = req.body?.comment;
+    workProfileByPk.ideal_work_comment = req.body?.ideal_work_comment;
+    workProfileByPk.relocation_option = req.body?.relocation_option;
     workProfileByPk.visa = req.body?.visa;
     workProfileByPk.design = req.body?.design;
-    workProfileByPk.portfolio_url = req.body.portfolio_url;
-    workProfileByPk.stack = req.body.stack;
+    workProfileByPk.portfolio_url = req.body?.portfolio_url;
+    workProfileByPk.stack = req.body?.stack;
     workProfileByPk.additional_tools_comments =
-      req.body?.additional_tools_comments.charAt(0).toUpperCase() +
-      req.body?.additional_tools_comments.slice(1);
+      req.body?.additional_tools_comments;
     workProfileByPk.employment_status_current =
-      req.body?.employment_status_current.charAt(0).toUpperCase() +
-      req.body?.employment_status_current.slice(1);
+      req.body?.employment_status_current;
     workProfileByPk.current_salary = req.body?.current_salary;
-    workProfileByPk.availability_status =
-      req.body?.availability_status.charAt(0).toUpperCase() +
-      req.body?.availability_status.slice(1);
+    workProfileByPk.availability_status = req.body?.availability_status;
     await workProfileByPk.save();
     res.json(workProfileByPk);
   } catch (error) {
@@ -145,6 +113,18 @@ export const deleteWorkProfile = async (req, res) => {
       },
     });
     res.sendStatus(204);
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+export const getEducationExperienceInWorkProfile = async (req, res) => {
+  try {
+    const educationExperienceInWorkProfile =
+      await education_experiences.findAll({
+        where: { work_profile_id: req.params.id },
+      });
+    return res.json(educationExperienceInWorkProfile);
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
