@@ -12,7 +12,7 @@ export const work_profile_dev_languages = sequelize.define(
     work_profile_id: {
       type: DataTypes.INTEGER,
     },
-    dev_language_id: {
+    dev_languages_id: {
       type: DataTypes.INTEGER,
     },
     level: {

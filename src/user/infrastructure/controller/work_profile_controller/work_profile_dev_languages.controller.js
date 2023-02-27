@@ -27,7 +27,7 @@ export const createWorkProfileDevLanguage = async (req, res) => {
   try {
     const newWorkProfileDevLanguage = await work_profile_dev_languages.create({
       work_profile_id: req.body.work_profile_id,
-      dev_language_id: req.body.dev_language_id,
+      dev_languages_id: req.body.dev_languages_id,
       level: req.body.level,
     });
     res.json(newWorkProfileDevLanguage);
@@ -42,7 +42,7 @@ export const updateWorkProfileDevLanguage = async (req, res) => {
       req.params.id
     );
     devLanguageByPk.work_profile_id = req.body?.work_profile_id;
-    devLanguageByPk.dev_language_id = req.body?.dev_language_id;
+    devLanguageByPk.dev_languages_id = req.body?.dev_languages_id;
     devLanguageByPk.level = req.body?.level;
     await devLanguageByPk.save();
     res.json(devLanguageByPk);

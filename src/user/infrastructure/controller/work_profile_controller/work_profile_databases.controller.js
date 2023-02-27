@@ -28,7 +28,8 @@ export const createWorkProfileDatabase = async (req, res) => {
   try {
     const newWorkProfileDatabase = await work_profile_databases.create({
       work_profile_id: req.body.work_profile_id,
-      database_id: req.body.database_id,
+      databases_id: req.body.databases_id,
+      level: req.body.level,
     });
     res.json(newWorkProfileDatabase);
   } catch (error) {
@@ -40,7 +41,8 @@ export const updateWorkProfileDatabase = async (req, res) => {
   try {
     const databaseByPk = await work_profile_databases.findByPk(req.params.id);
     databaseByPk.work_profile_id = req.body?.work_profile_id;
-    databaseByPk.database_id = req.body?.database_id;
+    databaseByPk.databasesid = req.body?.databases_id;
+    databaseByPk.level = req.body?.level;
     await databaseByPk.save();
     res.json(databaseByPk);
   } catch (error) {

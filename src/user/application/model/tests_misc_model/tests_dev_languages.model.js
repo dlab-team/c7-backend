@@ -7,7 +7,7 @@ export const tests_dev_languages = sequelize.define("tests_dev_languages", {
     primaryKey: true,
     autoIncrement: true,
   },
-  work_profile_id: {
+  test_id: {
     type: DataTypes.INTEGER,
   },
   dev_languages_id: {

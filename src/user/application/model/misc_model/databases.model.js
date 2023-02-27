@@ -15,21 +15,21 @@ export const databases_model = sequelize.define("databases", {
 });
 
 databases_model.hasMany(work_profile_databases, {
-  foreignKey: "database_id",
+  foreignKey: "databases_id",
   sourceKey: "id",
 });
 
 work_profile_databases.belongsTo(databases_model, {
-  foreignKey: "database_id",
+  foreignKey: "databases_id",
   targetKey: "id",
 });
 
 databases_model.hasMany(tests_databases, {
-  foreignKey: "database_id",
+  foreignKey: "databases_id",
   sourceKey: "id",
 });
 
 tests_databases.belongsTo(databases_model, {
-  foreignKey: "database_id",
+  foreignKey: "databases_id",
   targetKey: "id",
 });

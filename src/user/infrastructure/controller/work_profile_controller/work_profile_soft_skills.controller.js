@@ -28,7 +28,7 @@ export const createWorkProfileSoftSkill = async (req, res) => {
   try {
     const newWorkProfileSoftSkill = await work_profile_soft_skills.create({
       work_profile_id: req.body.work_profile_id,
-      soft_skill_id: req.body.soft_skill_id,
+      soft_skills_id: req.body.soft_skills_id,
     });
     res.json(newWorkProfileSoftSkill);
   } catch (error) {

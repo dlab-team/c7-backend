@@ -28,7 +28,7 @@ export const createTestsDevLanguage = async (req, res) => {
   try {
     const newTestsDevLanguage = await tests_dev_languages.create({
       test_id: req.body.test_id,
-      dev_language_id: req.body.dev_language_id,
+      dev_languages_id: req.body.dev_languages_id,
       level: req.body.level,
     });
     res.json(newTestsDevLanguage);
@@ -41,7 +41,7 @@ export const updateTestsDevLanguage = async (req, res) => {
   try {
     const devLanguageByPk = await tests_dev_languages.findByPk(req.params.id);
     devLanguageByPk.test_id = req.body?.test_id;
-    devLanguageByPk.dev_language_id = req.body?.dev_language_id;
+    devLanguageByPk.dev_languages_id = req.body?.dev_languages_id;
     devLanguageByPk.level = req.body?.level;
     await devLanguageByPk.save();
     res.json(devLanguageByPk);

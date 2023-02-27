@@ -7,7 +7,7 @@ export const tests_soft_skills = sequelize.define("tests_soft_skills", {
     primaryKey: true,
     autoIncrement: true,
   },
-  work_profile_id: {
+  test_id: {
     type: DataTypes.INTEGER,
   },
   soft_skills_id: {

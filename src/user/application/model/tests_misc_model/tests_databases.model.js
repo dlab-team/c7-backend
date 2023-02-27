@@ -7,7 +7,7 @@ export const tests_databases = sequelize.define("tests_databases", {
     primaryKey: true,
     autoIncrement: true,
   },
-  work_profile_id: {
+  test_id: {
     type: DataTypes.INTEGER,
   },
   databases_id: {

@@ -26,7 +26,7 @@ export const createTestsDatabase = async (req, res) => {
   try {
     const newTestsDatabase = await tests_databases.create({
       test_id: req.body.test_id,
-      database_id: req.body.database_id,
+      databases_id: req.body.databases_id,
       level: req.body.level,
     });
     res.json(newTestsDatabase);
@@ -39,7 +39,7 @@ export const updateTestsDatabase = async (req, res) => {
   try {
     const databaseByPk = await tests_databases.findByPk(req.params.id);
     databaseByPk.test_id = req.body?.test_id;
-    databaseByPk.database_id = req.body?.database_id;
+    databaseByPk.databases_id = req.body?.databases_id;
     databaseByPk.level = req.body?.level;
     await databaseByPk.save();
     res.json(databaseByPk);

@@ -7,7 +7,7 @@ export const tests_tools = sequelize.define("tests_tools", {
     primaryKey: true,
     autoIncrement: true,
   },
-  work_profile_id: {
+  test_id: {
     type: DataTypes.INTEGER,
   },
   tools_id: {

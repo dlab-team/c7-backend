@@ -26,7 +26,7 @@ export const createTestsSoftSkill = async (req, res) => {
   try {
     const newTestsSoftSkill = await tests_soft_skills.create({
       test_id: req.body.test_id,
-      soft_skill_id: req.body.soft_skill_id,
+      soft_skills_id: req.body.soft_skills_id,
       level: req.body.level,
     });
     res.json(newTestsSoftSkill);
@@ -39,7 +39,7 @@ export const updateTestsSoftSkill = async (req, res) => {
   try {
     const softSkillByPk = await tests_soft_skills.findByPk(req.params.id);
     softSkillByPk.test_id = req.body?.test_id;
-    softSkillByPk.soft_skill_id = req.body?.soft_skill_id;
+    softSkillByPk.soft_skills_id = req.body?.soft_skills_id;
     softSkillByPk.level = req.body?.level;
     await softSkillByPk.save();
     res.json(softSkillByPk);

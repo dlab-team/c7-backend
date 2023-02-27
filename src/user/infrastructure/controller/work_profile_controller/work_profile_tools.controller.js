@@ -28,7 +28,7 @@ export const createWorkProfileTool = async (req, res) => {
   try {
     const newWorkProfileTool = await work_profile_tools.create({
       work_profile_id: req.body.work_profile_id,
-      tool_id: req.body.tool_id,
+      tools_id: req.body.tools_id,
     });
     res.json(newWorkProfileTool);
   } catch (error) {

@@ -9,21 +9,24 @@ import {
 
 const workProfileDatabasesRoutes = Router();
 
-workProfileDatabasesRoutes.get("/workprofiledatabase", getWorkProfileDatabases);
+workProfileDatabasesRoutes.get(
+  "/workprofiledatabases",
+  getWorkProfileDatabases
+);
 workProfileDatabasesRoutes.post(
-  "/workprofiledatabase",
+  "/workprofiledatabases",
   createWorkProfileDatabase
 );
 workProfileDatabasesRoutes.put(
-  "/workprofiledatabase/:id",
+  "/workprofiledatabases/:id",
   updateWorkProfileDatabase
 );
 workProfileDatabasesRoutes.delete(
-  "/workprofiledatabase/:id",
+  "/workprofiledatabases/:id",
   deleteWorkProfileDatabase
 );
 workProfileDatabasesRoutes.get(
-  "/workprofiledatabase/:id",
+  "/workprofiledatabases/:id",
   getWorkProfileDatabase
 );
 
