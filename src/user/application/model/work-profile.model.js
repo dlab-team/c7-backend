@@ -1,6 +1,14 @@
 import { sequelize } from "../../../database/sequelize-pg.js";
 import { DataTypes } from "sequelize";
 import { education_experiences } from "./education_experiences.model.js";
+import { work_profile_databases } from "./work_profile_misc_model/work_profile_databases.model.js";
+import { work_profile_dev_languages } from "./work_profile_misc_model/work_profile_dev_languages.model.js";
+import { work_profile_soft_skills } from "./work_profile_misc_model/work_profile_soft_skills.model.js";
+import { work_profile_tools } from "./work_profile_misc_model/work_profile_tools.model.js";
+import { tests_databases } from "./tests_misc_model/tests_databases.model.js";
+import { tests_dev_languages } from "./tests_misc_model/tests_dev_languages.model.js";
+import { tests_soft_skills } from "./tests_misc_model/tests_soft_skills.model.js";
+import { tests_tools } from "./tests_misc_model/tests_tools.model.js";
 
 export const work_profiles = sequelize.define("work_profile", {
   id: {
@@ -91,6 +99,46 @@ work_profiles.hasMany(education_experiences, {
 });
 
 education_experiences.belongsTo(work_profiles, {
+  foreignKey: "work_profile_id",
+  targetKey: "id",
+});
+
+work_profiles.hasOne(work_profile_databases, {
+  foreignKey: "work_profile_id",
+  sourceKey: "id",
+});
+
+work_profile_databases.belongsTo(work_profiles, {
+  foreignKey: "work_profile_id",
+  targetKey: "id",
+});
+
+work_profiles.hasOne(work_profile_dev_languages, {
+  foreignKey: "work_profile_id",
+  sourceKey: "id",
+});
+
+work_profile_dev_languages.belongsTo(work_profiles, {
+  foreignKey: "work_profile_id",
+  targetKey: "id",
+});
+
+work_profiles.hasOne(work_profile_soft_skills, {
+  foreignKey: "work_profile_id",
+  sourceKey: "id",
+});
+
+work_profile_soft_skills.belongsTo(work_profiles, {
+  foreignKey: "work_profile_id",
+  targetKey: "id",
+});
+
+work_profiles.hasOne(work_profile_tools, {
+  foreignKey: "work_profile_id",
+  sourceKey: "id",
+});
+
+work_profile_tools.belongsTo(work_profiles, {
   foreignKey: "work_profile_id",
   targetKey: "id",
 });
