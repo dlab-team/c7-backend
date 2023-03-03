@@ -100,7 +100,7 @@ education_experiences.belongsTo(work_profiles, {
   targetKey: "id",
 });
 
-work_profiles.hasOne(work_profile_databases, {
+work_profiles.hasMany(work_profile_databases, {
   foreignKey: "work_profile_id",
   sourceKey: "id",
 });
@@ -110,7 +110,7 @@ work_profile_databases.belongsTo(work_profiles, {
   targetKey: "id",
 });
 
-work_profiles.hasOne(work_profile_dev_languages, {
+work_profiles.hasMany(work_profile_dev_languages, {
   foreignKey: "work_profile_id",
   sourceKey: "id",
 });
@@ -120,7 +120,7 @@ work_profile_dev_languages.belongsTo(work_profiles, {
   targetKey: "id",
 });
 
-work_profiles.hasOne(work_profile_soft_skills, {
+work_profiles.hasMany(work_profile_soft_skills, {
   foreignKey: "work_profile_id",
   sourceKey: "id",
 });
@@ -130,7 +130,7 @@ work_profile_soft_skills.belongsTo(work_profiles, {
   targetKey: "id",
 });
 
-work_profiles.hasOne(work_profile_tools, {
+work_profiles.hasMany(work_profile_tools, {
   foreignKey: "work_profile_id",
   sourceKey: "id",
 });
