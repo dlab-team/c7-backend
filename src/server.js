@@ -9,6 +9,18 @@ import contactCompanyRoutes from "../src/company/infrastructure/routes/contact_c
 import companyWorkAreaRoutes from "../src/company/infrastructure/routes/company_work_area.routes.js";
 import userTestRoutes from "../src/user/infrastructure/routes/user_test.routes.js";
 import testRoutes from "../src/user/infrastructure/routes/test.routes.js";
+import databasesRoutes from "./user/infrastructure/routes/misc_routes/databases.routes.js";
+import devLanguagesRoutes from "./user/infrastructure/routes/misc_routes/dev_languages.routes.js";
+import softSkillsRoutes from "./user/infrastructure/routes/misc_routes/soft_skills.routes.js";
+import toolsRoutes from "./user/infrastructure/routes/misc_routes/tools.routes.js";
+import testsDatabasesRoutes from "./user/infrastructure/routes/tests_misc_router/tests_databases.routes.js";
+import testsDevLanguagesRoutes from "./user/infrastructure/routes/tests_misc_router/tests_dev_languages.routes.js";
+import testsSoftSkillsRoutes from "./user/infrastructure/routes/tests_misc_router/tests_soft_skills.routes.js";
+import testsToolsRoutes from "./user/infrastructure/routes/tests_misc_router/tests_tool.routes.js";
+import workProfileDatabasesRoutes from "./user/infrastructure/routes/work_profile_routes/work_profile_databases.routes.js";
+import workProfileDevLanguagesRoutes from "./user/infrastructure/routes/work_profile_routes/work_profile_dev_languages.routes.js";
+import workProfileSoftSkillsRoutes from "./user/infrastructure/routes/work_profile_routes/work_profile_soft_skills.routes.js";
+import workProfileToolsRoutes from "./user/infrastructure/routes/work_profile_routes/work_profile_tools.routes.js";
 
 const routes = [
   userRoutes,
@@ -21,6 +33,18 @@ const routes = [
   companyWorkAreaRoutes,
   userTestRoutes,
   testRoutes,
+  databasesRoutes,
+  devLanguagesRoutes,
+  softSkillsRoutes,
+  toolsRoutes,
+  testsDatabasesRoutes,
+  testsDevLanguagesRoutes,
+  testsSoftSkillsRoutes,
+  testsToolsRoutes,
+  workProfileDatabasesRoutes,
+  workProfileDevLanguagesRoutes,
+  workProfileSoftSkillsRoutes,
+  workProfileToolsRoutes,
 ];
 
 const server = express();

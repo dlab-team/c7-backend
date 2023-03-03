@@ -1,5 +1,9 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../../../database/sequelize-pg.js";
+import { tests_databases } from "./tests_misc_model/tests_databases.model.js";
+import { tests_dev_languages } from "./tests_misc_model/tests_dev_languages.model.js";
+import { tests_soft_skills } from "./tests_misc_model/tests_soft_skills.model.js";
+import { tests_tools } from "./tests_misc_model/tests_tools.model.js";
 import { user_test } from "./user_test.model.js";
 
 export const test = sequelize.define("test", {
@@ -34,6 +38,46 @@ test.hasMany(user_test, {
 });
 
 user_test.belongsTo(test, {
+  foreignKey: "test_id",
+  targetKey: "id",
+});
+
+test.hasOne(tests_databases, {
+  foreignKey: "test_id",
+  sourceKey: "id",
+});
+
+tests_databases.belongsTo(test, {
+  foreignKey: "test_id",
+  targetKey: "id",
+});
+
+test.hasOne(tests_dev_languages, {
+  foreignKey: "test_id",
+  sourceKey: "id",
+});
+
+tests_dev_languages.belongsTo(test, {
+  foreignKey: "test_id",
+  targetKey: "id",
+});
+
+test.hasOne(tests_soft_skills, {
+  foreignKey: "test_id",
+  sourceKey: "id",
+});
+
+tests_soft_skills.belongsTo(test, {
+  foreignKey: "test_id",
+  targetKey: "id",
+});
+
+test.hasOne(tests_tools, {
+  foreignKey: "test_id",
+  sourceKey: "id",
+});
+
+tests_tools.belongsTo(test, {
   foreignKey: "test_id",
   targetKey: "id",
 });
