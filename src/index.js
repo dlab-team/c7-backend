@@ -21,10 +21,12 @@ import { sequelize } from "./database/sequelize-pg.js";
 // import "../src/user/application/model/tests_misc_model/tests_tools.model.js";
 // import "../src/user/application/model/tests_misc_model/tests_soft_skills.model.js";
 // import "../src/user/application/model/tests_misc_model/tests_dev_languages.model.js";
-import "../src/user/application/model/work_profile_misc_model/work_profile_databases.model.js";
+// import "../src/user/application/model/work_profile_misc_model/work_profile_databases.model.js";
 // import "../src/user/application/model/work_profile_misc_model/work_profile_dev_languages.model.js";
 // import "../src/user/application/model/work_profile_misc_model/work_profile_soft_skills.model.js";
 // import "../src/user/application/model/work_profile_misc_model/work_profile_tools.model.js";
+// import "../src/user/application/model/misc_model/job_options.model.js";
+// import "../src/user/application/model/work_profile_misc_model/work_profile_job_options.model.js";
 
 const PORT = 3005;
 
@@ -36,7 +38,7 @@ async function main() {
       if (err) console.log("Error in server setup");
       console.log("Server listening on Port", PORT);
     });
-    sequelize.sync();
+    // sequelize.sync();
   } catch (error) {
     console.log("No es posible conectarse a la base de datos", error);
   }

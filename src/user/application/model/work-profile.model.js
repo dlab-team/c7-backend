@@ -5,10 +5,7 @@ import { work_profile_databases } from "./work_profile_misc_model/work_profile_d
 import { work_profile_dev_languages } from "./work_profile_misc_model/work_profile_dev_languages.model.js";
 import { work_profile_soft_skills } from "./work_profile_misc_model/work_profile_soft_skills.model.js";
 import { work_profile_tools } from "./work_profile_misc_model/work_profile_tools.model.js";
-import { tests_databases } from "./tests_misc_model/tests_databases.model.js";
-import { tests_dev_languages } from "./tests_misc_model/tests_dev_languages.model.js";
-import { tests_soft_skills } from "./tests_misc_model/tests_soft_skills.model.js";
-import { tests_tools } from "./tests_misc_model/tests_tools.model.js";
+import { work_profile_job_options } from "./work_profile_misc_model/work_profile_job_options.model.js";
 
 export const work_profiles = sequelize.define("work_profile", {
   id: {
@@ -103,7 +100,7 @@ education_experiences.belongsTo(work_profiles, {
   targetKey: "id",
 });
 
-work_profiles.hasOne(work_profile_databases, {
+work_profiles.hasMany(work_profile_databases, {
   foreignKey: "work_profile_id",
   sourceKey: "id",
 });
@@ -113,7 +110,7 @@ work_profile_databases.belongsTo(work_profiles, {
   targetKey: "id",
 });
 
-work_profiles.hasOne(work_profile_dev_languages, {
+work_profiles.hasMany(work_profile_dev_languages, {
   foreignKey: "work_profile_id",
   sourceKey: "id",
 });
@@ -123,7 +120,7 @@ work_profile_dev_languages.belongsTo(work_profiles, {
   targetKey: "id",
 });
 
-work_profiles.hasOne(work_profile_soft_skills, {
+work_profiles.hasMany(work_profile_soft_skills, {
   foreignKey: "work_profile_id",
   sourceKey: "id",
 });
@@ -133,12 +130,22 @@ work_profile_soft_skills.belongsTo(work_profiles, {
   targetKey: "id",
 });
 
-work_profiles.hasOne(work_profile_tools, {
+work_profiles.hasMany(work_profile_tools, {
   foreignKey: "work_profile_id",
   sourceKey: "id",
 });
 
 work_profile_tools.belongsTo(work_profiles, {
+  foreignKey: "work_profile_id",
+  targetKey: "id",
+});
+
+work_profiles.hasMany(work_profile_job_options, {
+  foreignKey: "work_profile_id",
+  sourceKey: "id",
+});
+
+work_profile_job_options.belongsTo(work_profiles, {
   foreignKey: "work_profile_id",
   targetKey: "id",
 });
