@@ -42,7 +42,7 @@ user_test.belongsTo(test, {
   targetKey: "id",
 });
 
-test.hasOne(tests_databases, {
+test.hasMany(tests_databases, {
   foreignKey: "test_id",
   sourceKey: "id",
 });
@@ -52,7 +52,7 @@ tests_databases.belongsTo(test, {
   targetKey: "id",
 });
 
-test.hasOne(tests_dev_languages, {
+test.hasMany(tests_dev_languages, {
   foreignKey: "test_id",
   sourceKey: "id",
 });
@@ -62,7 +62,7 @@ tests_dev_languages.belongsTo(test, {
   targetKey: "id",
 });
 
-test.hasOne(tests_soft_skills, {
+test.hasMany(tests_soft_skills, {
   foreignKey: "test_id",
   sourceKey: "id",
 });
@@ -72,7 +72,7 @@ tests_soft_skills.belongsTo(test, {
   targetKey: "id",
 });
 
-test.hasOne(tests_tools, {
+test.hasMany(tests_tools, {
   foreignKey: "test_id",
   sourceKey: "id",
 });
