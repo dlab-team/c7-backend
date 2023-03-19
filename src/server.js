@@ -24,6 +24,8 @@ import workProfileToolsRoutes from "./user/infrastructure/routes/work_profile_ro
 import jobAvailabilityRoutes from "./user/infrastructure/routes/misc_routes/job_availability.routes.js";
 import jobOptionsRoutes from "./user/infrastructure/routes/misc_routes/job_options.routes.js";
 import visaRoutes from "./user/infrastructure/routes/misc_routes/visas.routes.js";
+import educationLevelRoutes from "./user/infrastructure/routes/education_level.routes.js";
+import currentJobStatusRoutes from "./user/infrastructure/routes/current_job_status.routes.js";
 
 const routes = [
   userRoutes,
@@ -51,6 +53,8 @@ const routes = [
   jobAvailabilityRoutes,
   jobOptionsRoutes,
   visaRoutes,
+  educationLevelRoutes,
+  currentJobStatusRoutes,
 ];
 
 const server = express();

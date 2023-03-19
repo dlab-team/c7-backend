@@ -142,6 +142,7 @@ export const populateMultipleTables = async (req, res) => {
   try {
     const newWorkProfile = await work_profiles.create(
       {
+        // .wp. equivale a work_profile
         gender: req.body.wp.gender,
         phone_number: req.body.wp.phone_number,
         city: req.body.wp.city,
@@ -173,6 +174,7 @@ export const populateMultipleTables = async (req, res) => {
       }
     );
     const newEducationExperience = await education_experiences.create({
+      // .eduexp. equivale a education_experience
       name: req.body.eduexp.name,
       work_profile_id: newWorkProfile.dataValues.id,
       institute_name: req.body.eduexp.institute_name,
@@ -183,34 +185,41 @@ export const populateMultipleTables = async (req, res) => {
       end_year: req.body.eduexp.end_year,
     });
     const newWorkProfileDataBase = await work_profile_databases.create({
+      // .wpdb. equivale a work_profile_databases
       work_profile_id: newWorkProfile.dataValues.id,
       databases_id: req.body.wpdb.databases_id,
       level: req.body.wpdb.level,
     });
     const newWorkProfileDevLanguage = await work_profile_dev_languages.create({
+      // .wpdl. equivale a work_profile_dev_languages
       work_profile_id: newWorkProfile.dataValues.id,
       dev_languages_id: req.body.wpdl.dev_languages_id,
       level: req.body.wpdl.level,
     });
     const newWorkProfileSoftSkill = await work_profile_soft_skills.create({
+      // .wpss. equivale a work_profile_soft_skills
       work_profile_id: newWorkProfile.dataValues.id,
       soft_skills_id: req.body.wpss.soft_skills_id,
     });
     const newWorkProfileTools = await work_profile_tools.create({
+      // .wpt. equivale a work_profile_tools
       work_profile_id: newWorkProfile.dataValues.id,
       tools_id: req.body.wpt.tools_id,
       level: req.body.wpt.level,
     });
     const newWorkProfileVisa = await work_profile_visas.create({
+      // .wpv. equivale a work_profile_visas
       work_profile_id: newWorkProfile.dataValues.id,
       visa_id: req.body.wpv.visa_id,
     });
     const newWorkProfileJobAvailability =
       await work_profile_job_availability_model.create({
+        // .wpja. equivale a work_profile_job_availability
         work_profile_id: newWorkProfile.dataValues.id,
         availability_id: req.body.wpja.availability_id,
       });
     const newWorkProfileJobOption = await work_profile_job_options.create({
+      // .wpjo. equivale a work_profile_job_options
       work_profile_id: newWorkProfile.dataValues.id,
       ideal_work_id: req.body.wpjo.ideal_work_id,
     });
