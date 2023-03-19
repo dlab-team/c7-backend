@@ -21,6 +21,9 @@ import workProfileDatabasesRoutes from "./user/infrastructure/routes/work_profil
 import workProfileDevLanguagesRoutes from "./user/infrastructure/routes/work_profile_routes/work_profile_dev_languages.routes.js";
 import workProfileSoftSkillsRoutes from "./user/infrastructure/routes/work_profile_routes/work_profile_soft_skills.routes.js";
 import workProfileToolsRoutes from "./user/infrastructure/routes/work_profile_routes/work_profile_tools.routes.js";
+import jobAvailabilityRoutes from "./user/infrastructure/routes/misc_routes/job_availability.routes.js";
+import jobOptionsRoutes from "./user/infrastructure/routes/misc_routes/job_options.routes.js";
+import visaRoutes from "./user/infrastructure/routes/misc_routes/visas.routes.js";
 
 const routes = [
   userRoutes,
@@ -45,6 +48,9 @@ const routes = [
   workProfileDevLanguagesRoutes,
   workProfileSoftSkillsRoutes,
   workProfileToolsRoutes,
+  jobAvailabilityRoutes,
+  jobOptionsRoutes,
+  visaRoutes,
 ];
 
 const server = express();
