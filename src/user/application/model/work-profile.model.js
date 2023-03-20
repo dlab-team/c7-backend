@@ -6,6 +6,8 @@ import { work_profile_dev_languages } from "./work_profile_misc_model/work_profi
 import { work_profile_soft_skills } from "./work_profile_misc_model/work_profile_soft_skills.model.js";
 import { work_profile_tools } from "./work_profile_misc_model/work_profile_tools.model.js";
 import { work_profile_job_options } from "./work_profile_misc_model/work_profile_job_options.model.js";
+import { work_profile_job_availability_model } from "./work_profile_misc_model/work_profile_job_availability.model.js";
+import { work_profile_visas } from "./work_profile_misc_model/work_profile_visas.model.js";
 
 export const work_profiles = sequelize.define("work_profile", {
   //CHECK
@@ -114,6 +116,15 @@ export const work_profiles = sequelize.define("work_profile", {
   availability_status: { 
     type: DataTypes.STRING,
   },
+  current_job: {
+    type: DataTypes.STRING,
+  },
+  current_job_status_id: {
+    type: DataTypes.INTEGER,
+  },
+  education_level_id: {
+    type: DataTypes.INTEGER,
+  },
 });
 
 work_profiles.hasMany(education_experiences, {
@@ -172,6 +183,26 @@ work_profiles.hasMany(work_profile_job_options, {
 });
 
 work_profile_job_options.belongsTo(work_profiles, {
+  foreignKey: "work_profile_id",
+  targetKey: "id",
+});
+
+work_profiles.hasMany(work_profile_job_availability_model, {
+  foreignKey: "work_profile_id",
+  sourceKey: "id",
+});
+
+work_profile_job_availability_model.belongsTo(work_profiles, {
+  foreignKey: "work_profile_id",
+  targetKey: "id",
+});
+
+work_profiles.hasMany(work_profile_visas, {
+  foreignKey: "work_profile_id",
+  sourceKey: "id",
+});
+
+work_profile_visas.belongsTo(work_profiles, {
   foreignKey: "work_profile_id",
   targetKey: "id",
 });
