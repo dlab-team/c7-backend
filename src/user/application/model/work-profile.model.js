@@ -8,84 +8,110 @@ import { work_profile_tools } from "./work_profile_misc_model/work_profile_tools
 import { work_profile_job_options } from "./work_profile_misc_model/work_profile_job_options.model.js";
 
 export const work_profiles = sequelize.define("work_profile", {
-  id: {
+  //CHECK
+  id: { 
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  gender: {
+  //CHECK
+  gender: { 
     type: DataTypes.STRING,
   },
-  phone_number: {
+  //CHECK
+  phone_number: { 
     type: DataTypes.STRING,
   },
-  city: {
+  //CHECK
+  city: { 
     type: DataTypes.STRING,
   },
-  country: {
+  //CHECK
+  country: { 
     type: DataTypes.STRING,
   },
-  education_status: {
+  //CHECK
+  education_status: { 
     type: DataTypes.STRING,
   },
-  english_level: {
+  //CHECK
+  english_level: { 
     type: DataTypes.STRING,
   },
-  cv_url: {
+  //CHECK
+  cv_url: { 
     type: DataTypes.STRING,
   },
-  linkedin_url: {
+  //CHECK
+  linkedin_url: { 
     type: DataTypes.STRING,
   },
-  github_url: {
+  //CHECK
+  github_url: { 
     type: DataTypes.STRING,
   },
-  featured_project: {
+  //CHECK
+  featured_project: { 
     type: DataTypes.STRING,
   },
-  work_availability: {
+  //Se elimina
+  work_availability: { 
     type: DataTypes.STRING,
   },
+
   dev_experience: {
     type: DataTypes.STRING,
   },
-  educational_level: {
+  // Se elimina
+  educational_level: { 
     type: DataTypes.STRING,
   },
-  comment: {
+  // Se elimina
+  comment: { 
     type: DataTypes.STRING,
   },
-  ideal_work_comment: {
+  //Cambiar a text
+  ideal_work_comment: { 
     type: DataTypes.STRING,
   },
-  relocation_option: {
+  // CHECK
+  relocation_option: { 
     type: DataTypes.STRING,
   },
-  visa: {
+  // Se elimina
+  visa: { 
     type: DataTypes.STRING,
   },
-  design: {
+  // Se elimina
+  design: { 
     type: DataTypes.INTEGER,
   },
-  portfolio_url: {
+  // CHECK
+  portfolio_url: { 
     type: DataTypes.STRING,
   },
-  stack: {
+  // Se elimina
+  stack: { 
     type: DataTypes.STRING,
   },
-  additional_tools_comments: {
+  // Cambiar a text
+  additional_tools_comments: { 
     type: DataTypes.STRING,
   },
-  employment_status_current: {
+  // Se elimina
+  employment_status_current: { 
     type: DataTypes.STRING,
   },
-  userId: {
+  // CHECK
+  userId: { 
     type: DataTypes.INTEGER,
   },
-  current_salary: {
+  // CHECK
+  current_salary: { 
     type: DataTypes.STRING,
   },
-  availability_status: {
+  // Se elimina
+  availability_status: { 
     type: DataTypes.STRING,
   },
 });
