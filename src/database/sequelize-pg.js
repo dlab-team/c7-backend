@@ -1,9 +1,9 @@
 import { Sequelize } from "sequelize";
 
 export const sequelize = new Sequelize(
-  "c7-provisorio-v2",
+  "c7_provisorio_v2",
   "postgres",
-  "admin",
+  "1213",
   {
     host: "localhost",
     dialect: "postgres",
