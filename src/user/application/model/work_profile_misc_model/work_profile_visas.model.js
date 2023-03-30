@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../../../../database/sequelize-pg.js";
 
-export const work_profile_tools = sequelize.define("work_profile_tools", {
+export const work_profile_visas = sequelize.define("work_profile_visas", {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -10,10 +10,7 @@ export const work_profile_tools = sequelize.define("work_profile_tools", {
   work_profile_id: {
     type: DataTypes.INTEGER,
   },
-  tools_id: {
-    type: DataTypes.INTEGER,
-  },
-  level: {
+  visa_id: {
     type: DataTypes.INTEGER,
   },
 });
