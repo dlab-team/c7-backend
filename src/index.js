@@ -27,6 +27,12 @@ import { sequelize } from "./database/sequelize-pg.js";
 // import "../src/user/application/model/work_profile_misc_model/work_profile_tools.model.js";
 // import "../src/user/application/model/misc_model/job_options.model.js";
 // import "../src/user/application/model/work_profile_misc_model/work_profile_job_options.model.js";
+// import "../src/user/application/model/misc_model/visas.model.js";
+// import "../src/user/application/model/misc_model/job_availability.model.js";
+// import "../src/user/application/model/work_profile_misc_model/work_profile_visas.model.js";
+// import "../src/user/application/model/work_profile_misc_model/work_profile_job_availability.model.js";
+// import "../src/user/application/model/current_job_status.model.js";
+// import "../src/user/application/model/education_level.model.js";
 
 const PORT = 3005;
 
