@@ -22,9 +22,10 @@
   "homepage": "https://github.com/dlab-team/c7-backend#readme",
   "dependencies": {
     "express": "^4.18.2",
+    "firebase": "^9.19.1",
     "pg": "^8.9.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.28.0"
+    "sequelize": "^6.30.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.20"

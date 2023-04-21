@@ -64,3 +64,8 @@ server.use(express.json());
 server.use([...routes]);
 
 export default server;
+
+const authRouter = require('./routes/auth');
+
+app.use('/auth', authRouter);
+
